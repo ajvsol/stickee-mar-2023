@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, it } from "mocha";
-import { sendPacks } from "../index.js";
+import { sendPacks } from "../src/sendPacks.js";
 
 describe("sendPacks basic tests", () => {
   it("should return an array of objects", () => {

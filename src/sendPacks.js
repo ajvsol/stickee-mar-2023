@@ -43,5 +43,7 @@ export function sendPacks(orderSize) {
       sentPacks.push({ [packSizes[packSizes.length - 1]]: 1 });
     }
   }
+  console.dir(`Result:`, sentPacks);
+
   return sentPacks;
 }
