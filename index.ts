@@ -6,7 +6,7 @@ type SentPacksType = {
   [key in PackSizeType]?: number;
 }[];
 
-function sendPacks(orderSize: number): SentPacksType {
+export function sendPacks(orderSize: number): SentPacksType {
   const packSizes: PackSizeType[] = [5000, 2000, 1000, 500, 250];
   const sentPacks: SentPacksType = [];
 

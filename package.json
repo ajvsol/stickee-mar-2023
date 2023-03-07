@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha -r ts-node/register -t 15000 test/**/*.ts",
+    "test": "mocha -r ts-node/register -t 15000 test/**/*.js",
     "index": "ts-node index.ts",
     "dev": "tsc --watch",
     "build": "tsc"
