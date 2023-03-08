@@ -38,6 +38,7 @@ export function sendPacks(orderSize, packSizes = [5000, 2000, 1000, 500, 250]) {
   ) {
     // If sentPacks is not empty & the smallest pack size is already in sentPacks & the pack size increase would fit the remaining order size
     // Then increase that pack size to the next smallest size
+
     if (
       Object.keys(sentPacks).length > 0 &&
       Object.hasOwn(sentPacks, `${packSizes[packSizes.length - 1]}`) &&
@@ -62,3 +63,4 @@ export function sendPacks(orderSize, packSizes = [5000, 2000, 1000, 500, 250]) {
 
   return sentPacks;
 }
+//sendPacks(501, [3000, 1500, 800, 400]);

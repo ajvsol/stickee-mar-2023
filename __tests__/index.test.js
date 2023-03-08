@@ -86,7 +86,7 @@ describe("sendPacks extended tests", () => {
   });
 });
 
-describe("sendPacks with different pack configuration", () => {
+describe("sendPacks with different pack configuration #1", () => {
   const altPackSizes = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
 
   it("should return an object", () => {
@@ -117,5 +117,39 @@ describe("sendPacks with different pack configuration", () => {
   it("should return the correct number of packs for 12001 widgets ordered", () => {
     const result = sendPacks(12001, altPackSizes);
     expect(result).to.deep.equal({ 100: 1, 1000: 12 });
+  });
+});
+
+describe("sendPacks with different pack configuration #2", () => {
+  const altPackSizes = [3000, 1500, 800, 400];
+
+  it("should return an object", () => {
+    const result = sendPacks(1, altPackSizes);
+    expect(result).to.be.an("object");
+  });
+
+  it("should return the correct number of packs for 1 widgets ordered", () => {
+    const result = sendPacks(1, altPackSizes);
+    expect(result).to.deep.equal({ 400: 1 });
+  });
+
+  it("should return the correct number of packs for 250 widgets ordered", () => {
+    const result = sendPacks(250, altPackSizes);
+    expect(result).to.deep.equal({ 400: 1 });
+  });
+
+  it("should return the correct number of packs for 251 widgets ordered", () => {
+    const result = sendPacks(251, altPackSizes);
+    expect(result).to.deep.equal({ 400: 1 });
+  });
+
+  it("should return the correct number of packs for 501 widgets ordered", () => {
+    const result = sendPacks(501, altPackSizes);
+    expect(result).to.deep.equal({ 800: 1 });
+  });
+
+  it("should return the correct number of packs for 12001 widgets ordered", () => {
+    const result = sendPacks(12001, altPackSizes);
+    expect(result).to.deep.equal({ 3000: 4, 400: 1 });
   });
 });
