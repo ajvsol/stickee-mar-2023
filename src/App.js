@@ -1,6 +1,7 @@
 import { sendPacks } from "./sendPacks.js";
 import { useState } from "react";
-function App() {
+
+export default function App() {
   const [input, setInput] = useState();
   const [packSize, setPackSize] = useState([5000, 2000, 1000, 500, 250]);
 
@@ -23,9 +24,6 @@ function App() {
     },
   ];
 
-  //value: [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100],
-  //label: "[1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]",
-
   function handleDropdown(event) {
     setPackSize(event.target.value);
   }
@@ -46,5 +44,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

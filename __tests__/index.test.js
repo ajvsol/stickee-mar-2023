@@ -152,4 +152,9 @@ describe("sendPacks with different pack configuration #2", () => {
     const result = sendPacks(12001, altPackSizes);
     expect(result).to.deep.equal({ 3000: 4, 400: 1 });
   });
+
+  it("should return the correct number of packs for extra test: 1300 widgets ordered", () => {
+    const result = sendPacks(1300, altPackSizes);
+    expect(result).to.deep.equal({ 1500: 1 });
+  });
 });
