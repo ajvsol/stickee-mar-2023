@@ -1,10 +1,11 @@
 export function sendPacks(orderSize, packSizes = [5000, 2000, 1000, 500, 250]) {
-  // Ensure packSizes is sorted in descending order
-  packSizes.sort((a, b) => b - a);
-
   const sentPacks = {};
-
   let remainingOrderSize = orderSize;
+
+  // Steps for React web app to convert the string packSizes in dropdown to a number[]
+  if (typeof packSizes === "string") {
+    packSizes = packSizes.split(",").map((el) => Number(el));
+  }
 
   for (let i = 0; i < packSizes.length; i++) {
     // Add 1 of the current pack size if the remaining order size is greater than or equal to pack size
@@ -61,6 +62,3 @@ export function sendPacks(orderSize, packSizes = [5000, 2000, 1000, 500, 250]) {
 
   return sentPacks;
 }
-
-//sendPacks(501, [700, 300, 100]);
-//sendPacks(1441);

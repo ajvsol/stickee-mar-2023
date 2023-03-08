@@ -87,7 +87,7 @@ describe("sendPacks extended tests", () => {
 });
 
 describe("sendPacks with different pack configuration", () => {
-  const altPackSizes = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+  const altPackSizes = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
 
   it("should return an object", () => {
     const result = sendPacks(1, altPackSizes);
