@@ -73,8 +73,6 @@ export function sendPacks(orderSize, packSizes = [5000, 2000, 1000, 500, 250]) {
         sentPacks[packSizes[packSizes.length - 1]]++ || 1;
     }
   }
-  //console.log(`Result`, Object.entries(sentPacks));
 
   return sentPacks;
 }
-sendPacks(1300, [3000, 1500, 800, 400]);
